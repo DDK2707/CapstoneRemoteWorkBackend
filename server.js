@@ -5,6 +5,7 @@ const mongoose = require("mongoose");
 const cors = require("cors");
 const userRoute = require("./routes/userRoute");
 const postRoute = require ("./routes/postRoute");
+const contactRoute = require("./routes/contactRoute")
 
 //set up MongoDB connection
 mongoose.connect(process.env.DB_URL, {
@@ -23,7 +24,7 @@ app.use(cors());
 
 app.use("/api/users", userRoute)
 app.use("/api/posts", postRoute)
-// app.use("/api/comment", commentRoute)
+app.use("/contact", contactRoute)
 
 app.get("/", (
 req, res, next) => {
@@ -163,6 +164,7 @@ req, res, next) => {
           },
         },
       },
+      
     }
   });
 });
