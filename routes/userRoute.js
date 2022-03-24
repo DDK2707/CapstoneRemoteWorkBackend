@@ -4,7 +4,6 @@ const User = require("../models/userModel")
 const router = require("express").Router();
 const bcrypt = require("bcrypt");
 const jwt = require("jsonwebtoken");
-const contact = require("./contactRoute");
 
 //get all
 router.get("/", async (req, res) =>{

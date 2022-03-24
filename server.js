@@ -88,6 +88,20 @@ req, res, next) => {
           message: "Object",
         },
       },
+      user_followers: {
+        method: "GET",
+        route: "/api/users/:id/followers",
+        result: {
+          message: "Array"
+        }
+      },
+      user_following: {
+        method: "GET",
+        route: "/api/users/:id/following",
+        result: {
+          message: "Array"
+        }
+      },
       post_routes: {
         timeline: {
           method: "GET",
@@ -164,7 +178,7 @@ req, res, next) => {
           },
         },
       },
-      
+
     }
   });
 });
