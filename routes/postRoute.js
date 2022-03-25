@@ -59,7 +59,23 @@ router.put("/:id/like", async(req, res) =>{
     }
 })
 
-//get post
+//get all posts
+router.get("/", async (req, res) => {
+    try {
+        const posts = await Post.find();
+    res.status(200).json({
+        message: "Success",
+        results: posts
+    })
+    } catch (error) {
+        res.status(500).send({
+            message: error.message
+        })
+    }
+})
+
+
+//get single post
 router.get("/:id", async(req, res) =>{
     try {
         const post = await Post.findById(req.params.id);
