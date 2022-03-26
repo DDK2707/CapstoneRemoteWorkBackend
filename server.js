@@ -18,7 +18,7 @@ db.once("open", () => console.log("Connected to database"));
 
 //configure Express app
 const app = express();
-app.set("port", process.env.PORT || 7500);
+app.set("port", process.env.PORT || 4500);
 app.use(express.json());
 app.use(cors());
 
