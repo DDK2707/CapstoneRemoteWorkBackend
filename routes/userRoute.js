@@ -55,7 +55,7 @@ router.post("/register", async(req, res) => {
 })
 
 //USER LOGIN
-router.patch("/login", async(req, res, next) => {
+router.put("/login", async(req, res, next) => {
     const {
         email,
         password

@@ -44,7 +44,7 @@ req, res, next) => {
         },
       },
       user_login: {
-        method: "PATCH",
+        method: "PUT",
         route: "/api/users",
         request_body: {
           email: "String",
@@ -74,7 +74,14 @@ req, res, next) => {
           username: "String",
           email: "String",
           password: "String",
-          join_date: "String",
+          profilePicture: "String",
+          coverPicture: "String",
+          isProducer: "Boolean",
+          isExec: "Boolean",
+          description: "String",
+          city: "String",
+          from: "String",
+          signed: "Number"
         },
         route: "/api/users/:user_id",
         result: {
@@ -106,13 +113,10 @@ req, res, next) => {
         timeline: {
           method: "GET",
           request_body: {
-            title: "String",
-            category: "String",
             description: "String",
             img: "String",
             price: "Number",
             created_by: "Number",
-            quantity: "Number"
           },
           route: "/api/posts",
           headers: {
